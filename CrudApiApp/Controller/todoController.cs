@@ -37,18 +37,22 @@ namespace CrudApiApp.Controller
             {
                 return NotFound("Employee with the ID " + id + "does not  Exist");
             }
-            if (employee.Name != null)
+            if (employee.UserName != null)
             {
-                emp.Name = employee.Name;
+                emp.UserName = employee.UserName;
             }
-            if (employee.Gender != null)
+            if (employee.Email != null)
             {
-                emp.Gender = employee.Gender;
+                emp.Email = employee.Email;
             }
-            if (employee.Name != null)
+            if (employee.FirstName != null)
             {
-                emp.Age = employee.Age;
+                emp.FirstName = employee.FirstName;
+            }if(employee.LastName!=null)
+            {
+                employee.LastName = employee.LastName;
             }
+
 
             _context.Update(emp);
             _context.SaveChanges();
